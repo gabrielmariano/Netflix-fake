@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import history from "./services/history";
 
 import Main from "./pages/Main";
 import About from "./pages/About";
+import Series from "./pages/Series"
 
 import GlobalStyle from "./styles/global";
 
@@ -12,10 +13,11 @@ function App() {
   return (
     <Router>
     <GlobalStyle />
-      <Switch history={history}>
+      <Router history={history}>
           <Route exact path="/" component={Main} />
           <Route path="/about" component={About}/>
-      </Switch>
+          <Route path="/Series" component={Series}/>
+      </Router>
     </Router>
   )
 }
